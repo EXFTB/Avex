@@ -1,3 +1,1 @@
 print("Success")
-local s = ...
-print(s)
