@@ -2,6 +2,16 @@ if (not game:IsLoaded()) then
     game.Loaded:Wait();
 end
 
+local function CheckCompatibility(String)
+    if (not getfenv()["identifyexecutor"]) then return game:GetService("Players").LocalPlayer:Kick("Executor not compatible with Avex.") end
+
+    if identifyexecutor() == String then
+        return true
+    end
+
+    return game:GetService("Players").LocalPlayer:Kick("Executor not compatible with Avex.")
+end
+
 local function LoadScript(Script)
     return loadstring(game:HttpGet(Script..".lua"), Script)()
 end
@@ -18,9 +28,21 @@ getgenv().Avex = {
     Source = "https://raw.githubusercontent.com/EXFTB/Avex/main/",
     Games = {
         ["8343259840"] = {Name = "Criminality"          Script = "Games/CR"  },
-        ["2262441883"] = {Name = "Electric State"       Script = "Games/ES"   }
+        ["2262441883"] = {Name = "Electric State"       Script = "Games/ES"  },
+    },
+    Executors = {
+        "Fluxus",
+        "Syn",
+        "Valyse",
+        "Electron"
     }
 }
 
-Avex.Game = GetGameInformation()
-LoadScript(Avex.Game.Script)
+do
+    for _, Executor in next, Avex.Executors do
+        CheckCompatibility(Executor)
+    end
+
+    Avex.Game = GetGameInformation()
+    LoadScript(Avex.Game.Script)
+end
