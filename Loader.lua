@@ -3,7 +3,7 @@ if (not game:IsLoaded()) then
 end
 
 local function LoadScript(Script)
-    return loadstring(game:HttpGet(Script..".lua"))()
+    return loadstring(game:HttpGet(Script..".lua"), Script)()
 end
 
 local function GetGameInformation()
