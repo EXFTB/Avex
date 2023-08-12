@@ -1,3 +1,7 @@
+if (not getgenv().WLKey) then return warn("Missing key!") end
+
+script_key = getgenv().WLKey
+
 if (not game:IsLoaded()) then
     game.Loaded:Wait();
 end
