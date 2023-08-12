@@ -1,7 +1,7 @@
 Coming soon
 
 ```lua
-script_key = ""
+getgenv().WLKey = ""
 
 b = ("3m3o3c3?3t3n3e3t3n3o3c3r3e3s3u3b3u3h3t3i3g?3w3a3r3"):gsub("?", ".")
 q = ("3a3u3l3?"):gsub("?", ".")
