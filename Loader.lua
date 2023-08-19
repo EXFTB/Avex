@@ -33,6 +33,7 @@ getgenv().Avex = {
     Games = {
         ["8343259840"] = {Name = "Criminality",          Script = "Games/CR"  },
         ["2262441883"] = {Name = "Electric State",       Script = "Games/ES"  },
+        ["2788229376"] = {Name = "Da Hood",              Script = "Games/DH"  },
     },
     Executors = {
         "Fluxus",
